@@ -8,8 +8,35 @@ namespace CSBasic
 {
     class Program
     {
+        // var 키워드는 지역변수로만 가능하다
+        // var name = "김연희";
+
         static void Main(string[] args)
         {
+            // keyword
+            // int as;
+
+            // context keyword
+            var name = "김연희";
+            // var var = "김연희";
+            // var abcs = "asdf;
+
+            // 식별자 Identifier
+            int alpha;
+            int Alpha;
+            // int break;
+            // int 2453alpha;
+            // int has space;
+            // int 💕😊❤;
+            int 한글숫자;
+
+            /// xml 주석
+            //inline commnet
+            /*
+             * comment
+             */
+
+            Console.WriteLine("Hello");
         }
     }
 }
