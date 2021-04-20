@@ -42,6 +42,38 @@ namespace CSBasic
             Console.WriteLine("");
             Console.WriteLine("이건 개행");
 
+            // 자료형(Data Type)
+            // Integer
+            Console.WriteLine(53 + 272 - 123);
+            Console.WriteLine(53 * 272 - 3);
+            Console.WriteLine(14 / 2); // 7
+            Console.WriteLine(14 / 3); // 4
+            Console.WriteLine(14 % 3); // 2
+
+            // Real Number
+            Console.WriteLine(13.123);
+            Console.WriteLine(0);
+            Console.WriteLine(0.0);
+            Console.WriteLine(14.0 / 2.0); // 7.0
+            Console.WriteLine(14.0 / 3.0); // 4.666667
+            // Console.WriteLine(14.0 % 3.0);
+            Console.WriteLine(14 / 3); // 4
+            Console.WriteLine(14.0 / 3); // 4.666667
+            Console.WriteLine(14 / 3.0); // 4.666667
+            Console.WriteLine(14.0 / 3.0); // 4.666667
+
+            //Character
+            Console.WriteLine('A'); // 문자
+            // String
+            Console.WriteLine("A"); // 문자열
+            // excape Characters
+            Console.WriteLine("\t 탭 \\ 역슬래시 \n 개행 \" ");
+            Console.WriteLine("미\t림여자정보과학고");
+            Console.WriteLine("미림\t여자정보과학고");
+            Console.WriteLine("미림여\t자정보과학고");
+            Console.WriteLine("미림여자\t정보과학고");
+            Console.WriteLine("미림여자정\t보과학고");
+            Console.WriteLine("미림여자정보\t과학고");
         }
     }
 }
