@@ -190,8 +190,8 @@ namespace CSBasic
             var someb = 42;
             var somec = 3.1415962;
             Console.WriteLine(somea.GetType());
-            Console.WriteLine(somea.GetType());
-            Console.WriteLine(somea.GetType());
+            Console.WriteLine(someb.GetType());
+            Console.WriteLine(somec.GetType());
 
             bool isLoop = true;
             string input;
