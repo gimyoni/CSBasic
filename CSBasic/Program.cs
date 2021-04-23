@@ -10,6 +10,7 @@ namespace CSBasic
     {
         // var 키워드는 지역변수로만 가능하다
         // var name = "김연희";
+        // var something = "blahblah";
 
         static void Main(string[] args)
         {
@@ -184,6 +185,13 @@ namespace CSBasic
             Console.WriteLine(_double.GetType());
             Console.WriteLine(_char.GetType());
             Console.WriteLine(_string.GetType());
+
+            var somea = "마음에 드는 문자열";
+            var someb = 42;
+            var somec = 3.1415962;
+            Console.WriteLine(somea.GetType());
+            Console.WriteLine(somea.GetType());
+            Console.WriteLine(somea.GetType());
 
         }
     }
