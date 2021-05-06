@@ -109,6 +109,35 @@ namespace CSBasic2
             {
                 Console.WriteLine("심심해~");
             }
+
+        ConsoleKeyInfo info;
+        bool isLoop = true;
+            while(isLoop)
+            {
+                info = Console.ReadKey();
+                switch(info.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        Console.WriteLine(":위로_화살표:");
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.WriteLine(":아래쪽_화살표:");
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.WriteLine(":오른쪽_화살표:");
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.WriteLine(":왼쪽_화살표:");
+                        break;
+                    case ConsoleKey.Escape:
+                        Console.WriteLine("으악!");
+                        isLoop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Unknown key");
+                        break;
+                }
+            }
         }
     }
 }
