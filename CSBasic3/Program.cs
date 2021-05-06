@@ -12,6 +12,7 @@ namespace CSBasic3
             Console.WriteLine(intArray[99]);
             // Console.WriteLine(intArray[100]); // 범위 추가
             // Console.WriteLine(intArray[-]); // 음수 사용 불가
+
         }
     }
 }
