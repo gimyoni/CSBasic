@@ -77,14 +77,44 @@ namespace CSBasic4
             Console.WriteLine(product.name + ": " + product.price + "원");
 
             Product productA = new Product() { name = "짜장면", price = 5500 };
-            Product productB = new Product() { name = "짬봉", price = 8000 };
+            Product productB = new Product() { name = "짬뽕", price = 8000 };
             Product productC = new Product() { name = "탕수육" };
             Product productD = new Product() { price = 9999999 };
             Product productE = new Product() { price = 30000, name = "양장피" };
 
 
+            List<Student> students = new List<Student>()
+            {
+                new Student() { name = "김연희", grade = 1 },
+                new Student() { name = "이연희", grade = 3 },
+                new Student() { name = "박연희", grade = 2 },
+                new Student() { name = "서연희", grade = 3 },
+                new Student() { name = "방연희", grade = 1 },
+                new Student() { name = "문연희", grade = 2 },
+                new Student() { name = "신연희", grade = 1 }
+            };
 
+            /*students.Add(new Student() { name = "김연희", grade = 1 });
+            students.Add(new Student() { name = "이연희", grade = 2 });
+            students.Add(new Student() { name = "박연희", grade = 3 });
+            students.Add(new Student() { name = "서연희", grade = 1 });
+            students.Add(new Student() { name = "문연희", grade = 3 });
+            students.Add(new Student() { name = "방연희", grade = 2 });
+            students.Add(new Student() { name = "함연희", grade = 1 });
+            students.Add(new Student() { name = "신연희", grade = 1 });*/
 
+            //foreach(var item in students)
+             for(int i = 0; i< students.Count; i++)
+                if (students[i].grade > 1)
+                    students.RemoveAt(i);
+            
+             //students.Remove(students[i]);
+            
+
+            foreach(var item in students)
+            {
+                Console.WriteLine(item.name + " : " + item.grade);
+            }
 
         }
     }
