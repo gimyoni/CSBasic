@@ -6,6 +6,39 @@ using System.Threading.Tasks;
 
 namespace CSBasic5
 {
+
+    class Product
+    {
+        public static int counter = 0;
+        public int id;
+        public string name;
+        public int price;
+
+        public Product(string name, int price)
+        {
+            // Product.counter = counter + 1;
+            counter++;
+            this.id = counter;
+            this.name = name;
+            this.price = price;
+        }
+
+        public override string ToString()
+        {
+            return this.id+" : "+this.name+" ("+this.price+"won)";
+        }
+    }
+
+    class Sample
+    {
+        public static int value;
+        static Sample()
+        {
+            value = 10;
+            Console.WriteLine("정적 생성자 호출");
+        }
+    }
+
     class Program
     {
         int someModifier = 0;
@@ -104,6 +137,22 @@ namespace CSBasic5
             Console.WriteLine(MyMath.Abs(-522));
             Console.WriteLine(MyMath.Abs(52.333));
             Console.WriteLine(MyMath.Abs(999999999999999));
+
+            Product productA = new Product("감자", 2000);
+            Product productB = new Product("고구마", 2300);
+            Product productC = new Product("옥수수", 5000);
+
+            Console.WriteLine(productA);
+            Console.WriteLine(productB);
+            Console.WriteLine(productC);
+            Console.WriteLine(Product.counter + "개 생성되었습니다.");
+
+            Console.WriteLine("첫 번째 위치");
+            Sample sample = new Sample();
+            Console.WriteLine("두 번째 위치");
+            Console.WriteLine(Sample.value);
+            Console.WriteLine("세 번째 위치");
+
         }
     }
 }
