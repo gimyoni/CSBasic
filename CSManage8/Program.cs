@@ -1,12 +1,32 @@
-﻿namespace CSBasic8
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSBasic8
 {
     class Program
     {
+        class TestClass : IBasic
+        {
+            public int TestProperty
+            {
+                get => 0;
+                set => value = 0;
+            }
+
+            public int TestInstanceMethod()
+            {
+                return 0;
+            }
+        }
+
         class Dummy : IDisposable
         {
             public void Dispose()
             {
-                Console.WriteLine("리소스가 해제되었습니다.");
+                Console.WriteLine("리소스 해제");
             }
         }
         class Product : IComparable
@@ -21,26 +41,30 @@
 
             public override string ToString()
             {
-                return Name + " : " + Price + "원";
+                return Name + ":" + Price + "원";
             }
         }
         static void Main(string[] args)
         {
-            // IComparable
-            List<Product> list = new List<Product>()
-            {
-                  new Product() { Name="고구마", Price=1500},
-	@@ -39,6 +47,14 @@ static void Main(string[] args)
-            {
-                Console.WriteLine(item);
-            }
+            IBasic basic = new TestClass();
 
-            Console.WriteLine();
-
-            // IDisposable
             using (Dummy d = new Dummy())
             {
                 Console.WriteLine("뭔가 했습니다.");
+            }
+
+            List<Product> list = new List<Product>()
+            {
+                new Product(){Name="고구마",Price=1500},
+                new Product(){Name="사과",Price=2400},
+                new Product(){Name="바나나",Price=1000},
+                new Product(){Name="배",Price=3000},
+                new Product(){Name="멜론",Price=15000},
+            };
+            list.Reverse();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
             }
         }
     }
