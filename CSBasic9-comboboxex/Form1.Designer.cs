@@ -29,44 +29,58 @@ namespace CSBasic9_comboboxex
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.foodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.foodBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.foodBindingSource;
+            this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "짜장면",
-            "짬뽕",
-            "탕수육",
-            "라조기",
-            "볶음밥",
-            "김치볶음밥",
-            "양꼬치"});
-            this.comboBox1.Location = new System.Drawing.Point(35, 29);
+            this.comboBox1.Location = new System.Drawing.Point(13, 13);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(176, 26);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.ValueMember = "Price";
             // 
-            // listView1
+            // foodBindingSource
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(35, 55);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 190);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.foodBindingSource.DataSource = typeof(CSBasic9_comboboxex.Food);
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.foodBindingSource1;
+            this.listBox1.DisplayMember = "Name";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(13, 63);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(176, 364);
+            this.listBox1.TabIndex = 1;
+            this.listBox1.ValueMember = "Price";
+
+            // 
+            // foodBindingSource1
+            // 
+            this.foodBindingSource1.DataSource = typeof(CSBasic9_comboboxex.Food);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(1160, 444);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -74,6 +88,9 @@ namespace CSBasic9_comboboxex
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.BindingSource foodBindingSource;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.BindingSource foodBindingSource1;
     }
 }
+
