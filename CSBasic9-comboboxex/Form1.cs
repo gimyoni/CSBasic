@@ -17,5 +17,9 @@ namespace CSBasic9_comboboxex
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
