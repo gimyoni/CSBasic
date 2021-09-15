@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CSBasic11
 {
@@ -19,9 +20,35 @@ namespace CSBasic11
         }
         static void Main(string[] args)
         {
-            List<Product> products = new List<Product>()
+            string url = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1150061500";
+            XElement xElement = XElement.Load(url);
+            var xmlQuery = from item in xElement.Descendants("data") 
+                           select new
+                           {
+                               no = item.Element("seq").Value,
+                               hour = item.Element("hour").Value,
+                               day = item.Element("day").Value,
+                               temp = item.Element("temp").Value,
+                               wdKor = item.Element("wdKor").Value,
+                               wfKor = item.Element("wfKor").Value,
+                               tmn = item.Element("tmn").Value,
+                               tmx = item.Element("tmx").Value
+
+                           };
+
+            foreach (var item in xmlQuery)
             {
-                new Product() {Name = "고구마", Price = 5000},                new Product() {Name = "고구마", Price = 5000},
+                Console.WriteLine(
+                    item.hour + "\t" + item.hour+"\t"+item.day+"\t"
+                    + item.temp + "\t"+ item.wdKor + "\t"
+                    + item.wfKor + "\t" + item.tmn + "\t"
+                    + item.tmx + "\t"
+                    );
+            }
+
+            List < Product > products = new List<Product>()
+            {
+                new Product() {Name = "고구마", Price = 5000},
                 new Product() {Name = "사과", Price = 4000},
                 new Product() {Name = "감자", Price = 3000},
                 new Product() {Name = "옥수수", Price = 2000},
