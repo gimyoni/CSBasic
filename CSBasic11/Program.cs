@@ -8,9 +8,37 @@ namespace CSBasic11
 {
     class Program
     {
-
+        class Product
+        {
+            public string Name { get; set; }
+            public int Price { get; set; }
+            public override string ToString()
+            {
+                return Name + ":" + Price + "원";
+            }
+        }
         static void Main(string[] args)
         {
+            List<Product> products = new List<Product>()
+            {
+                new Product() {Name = "고구마", Price = 5000},                new Product() {Name = "고구마", Price = 5000},
+                new Product() {Name = "사과", Price = 4000},
+                new Product() {Name = "감자", Price = 3000},
+                new Product() {Name = "옥수수", Price = 2000},
+                new Product() {Name = "호박", Price = 1000},
+                new Product() {Name = "수박", Price = 8700},
+                new Product() {Name = "배", Price = 900},
+                new Product() {Name = "딸기", Price = 3000},
+            };
+            var output3 = from item in products
+                          where item.Price > 1500
+                          orderby item.Name ascending
+                          select item;
+
+            foreach(var item in output3)
+            {
+                Console.WriteLine(item);
+            }
 
             List<int> input = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             List<int> output = new List<int>();
