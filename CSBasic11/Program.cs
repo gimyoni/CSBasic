@@ -28,7 +28,24 @@ namespace CSBasic11
                 }
             }*/
 
-      
+            foreach(var item in output)
+            {
+                Console.WriteLine(item);
+            }
+
+            var output2 = from item in input
+                          where item % 2 == 0
+                          select new
+                          {
+                              A = item *2,
+                              B = item * item,
+                              C = 100
+                          };
+
+            foreach(var item in output2)
+            {
+                Console.WriteLine(item.A + " / " + item.B + "/" + item.C);
+            }
         }
     }
 }
