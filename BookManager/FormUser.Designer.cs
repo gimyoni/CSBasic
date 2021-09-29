@@ -1,5 +1,4 @@
-﻿
-namespace BookManager
+﻿namespace BookManager
 {
     partial class FormUser
     {
@@ -40,9 +39,9 @@ namespace BookManager
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -149,10 +148,6 @@ namespace BookManager
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(BookManager.User);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -169,6 +164,10 @@ namespace BookManager
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 150;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(BookManager.User);
+            // 
             // FormUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -177,7 +176,10 @@ namespace BookManager
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormUser";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "사용자 관리";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
